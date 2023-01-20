@@ -22,7 +22,7 @@ export function useBrandFactory<BRANDS, BRAND_SEARCH_PARAMS, API extends Platfor
 
       try {
         loading.value = true;
-        brands.value = await _factoryParams.brandSearch(searchParams);
+        brands.value = await _factoryParams.brandsSearch(searchParams);
         error.value.search = null;
       } catch (err) {
         error.value.search = err;
@@ -37,7 +37,7 @@ export function useBrandFactory<BRANDS, BRAND_SEARCH_PARAMS, API extends Platfor
 
       try {
         loading.value = true;
-        brands.value = await _factoryParams.brandAll(searchParams);
+        brands.value = await _factoryParams.brandsAll(searchParams);
         error.value.search = null;
       } catch (err) {
         error.value.search = err;
@@ -52,7 +52,7 @@ export function useBrandFactory<BRANDS, BRAND_SEARCH_PARAMS, API extends Platfor
 
       try {
         loading.value = true;
-        brands.value = await _factoryParams.brandOne(searchParams);
+        brands.value = await _factoryParams.brandsOne(searchParams);
         error.value.search = null;
       } catch (err) {
         error.value.search = err;
