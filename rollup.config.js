@@ -1,6 +1,7 @@
 import pkg from './package.json';
 import typescript from 'rollup-plugin-typescript2';
 import replace from '@rollup/plugin-replace';
+import externals from '../../../packages/externals.config';
 
 export function generateBaseConfig(pkg) {
   return {
@@ -18,7 +19,8 @@ export function generateBaseConfig(pkg) {
       }
     ],
     external: [
-      ...Object.keys(pkg.dependencies || {})
+      ...Object.keys(pkg.dependencies || {}),
+      ...externals
     ],
     plugins: [
       typescript({
